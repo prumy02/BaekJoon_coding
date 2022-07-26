@@ -4,24 +4,25 @@
 using namespace std;
 
 int main() {
-	int hour, min;
-	int time;
+	
+	int A, B, C;
+	int count = 0;
+	cin >> A >> B >> C;
 
-	cin >> hour >> min;
-	cin >> time;
-
-	hour += time / 60;
-	min += time % 60;
-
-	if (min >= 60) {
-		hour += 1;
-		min -= 60;
+	if ((A == B)&&(B == C)) {
+		count = 10000 + A * 1000;
+	}
+	else if ((A == B)||(A == C)) {
+		
+		count = 1000 + A * 100;
+	}
+	else if (B == C) {
+		count = 1000 + B * 100;
+	}
+	else {
+		count = max(max(a, b), c);
 	}
 
-	if (hour >= 24) {
-		hour -= 24;
-	}
-
-	cout << hour << " " << min;
+	cout << count;
 	return 0;
 }
