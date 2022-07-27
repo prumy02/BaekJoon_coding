@@ -5,23 +5,24 @@ using namespace std;
 
 int main() {
 
-	int hour, min, time;
+	int N;
+	int cnt = 0;
+	int temp, num;
+	cin >> N;
 
-	cin >> hour >> min;
-	cin >> time;
+	num = N;
 
-	hour += time / 60;
-	min += time % 60;
+	while (1) {
+		temp = (N % 10) * 10 + (N / 10 + N % 10) % 10;
+		cnt++;
+		N = temp;
 
-
-	if (min >= 60) {
-		hour += 1;
-		min -= 60;
+		if (temp == num) {
+			break;
+		}
 	}
 
-	if (hour >= 24) {
-		hour -= 24;
-	}
-	
-	cout << hour << " " << min;
+	cout << cnt << "\n";
+
+	return 0;
 }
