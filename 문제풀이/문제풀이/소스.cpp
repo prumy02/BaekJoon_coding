@@ -1,35 +1,23 @@
 #include<iostream>
-#include<vector>
+#include<string>
 
 using namespace std;
 
-bool han(int n) {
-	if (n < 100) {
-		return true;
-	}
-	else {
-		if (n / 100 + n % 10 == 2*((n / 10) % 10)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
-}
-
 int main() {
+	string word, wrd_up;
+	string alpbt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	cin >> word;
+	int result[26];
 
-	int N;
-	cin >> N;
-
-	int cnt = 0;
-
-	for (int i = 1; i < N+1; i++) {
-		if (han(i)) {
-			cnt++;
+	for (int i = 0; i < word.length(); i++) {
+		wrd_up[i] = toupper(word[i]);
+	}
+	for (int i = 0; i < word.length(); i++) {
+		for (int j = 0; j < 26; j++) {
+			if (word[i] = alpbt[j]) {
+				result[j]++;
+			}
 		}
 	}
-
-	cout << cnt;
+	return 0;
 }
