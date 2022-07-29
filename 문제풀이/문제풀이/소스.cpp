@@ -4,20 +4,28 @@
 using namespace std;
 
 int main() {
-	string word, wrd_up;
-	string alpbt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	cin >> word;
-	int result[26];
+	int N, arr[26]={0,}, cnt=0;
+	cin >> N;
 
-	for (int i = 0; i < word.length(); i++) {
-		wrd_up[i] = toupper(word[i]);
-	}
-	for (int i = 0; i < word.length(); i++) {
-		for (int j = 0; j < 26; j++) {
-			if (word[i] = alpbt[j]) {
-				result[j]++;
+	string word;
+	for (int i = 0; i < N; i++) {
+		cin >> word;
+		bool groupword = true;
+
+		for (int j = 0; j < word.length(); j++) {
+			for (int k = 0; k < j; k++) {
+				if (word[j] != word[j - 1] && word[j] == word[k]) {
+					groupword = false;
+					break;
+				}
 			}
 		}
+		if (groupword) cnt++;
 	}
+
+	cout << cnt;
+
+
+
 	return 0;
 }
