@@ -4,28 +4,16 @@
 using namespace std;
 
 int main() {
-	int N, arr[26]={0,}, cnt=0;
-	cin >> N;
+	int A, B, C;
+	cin >> A >> B >> C;
 
-	string word;
-	for (int i = 0; i < N; i++) {
-		cin >> word;
-		bool groupword = true;
-
-		for (int j = 0; j < word.length(); j++) {
-			for (int k = 0; k < j; k++) {
-				if (word[j] != word[j - 1] && word[j] == word[k]) {
-					groupword = false;
-					break;
-				}
-			}
-		}
-		if (groupword) cnt++;
+	int cnt = 0;
+	
+	if (B >= C) {
+		cout << -1;
+		return 0;
 	}
+	
+	cout << A / (C - B) + 1;
 
-	cout << cnt;
-
-
-
-	return 0;
 }
