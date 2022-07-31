@@ -4,16 +4,16 @@
 using namespace std;
 
 int main() {
-	int A, B, C;
-	cin >> A >> B >> C;
+	int N;
+	cin >> N;
+	int i = 0;
 
-	int cnt = 0;
-	
-	if (B >= C) {
-		cout << -1;
-		return 0;
+	for (int sum = 2; sum <= N; i++) {
+		sum += 6 * i;
 	}
-	
-	cout << A / (C - B) + 1;
 
+	if (N == 1)i = 1;
+
+	cout << i;
+	return 0;
 }
