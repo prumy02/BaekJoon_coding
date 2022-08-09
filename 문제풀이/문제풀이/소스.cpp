@@ -1,20 +1,18 @@
-#include<iostream>
-#include<string>
-
+#include <iostream>
 using namespace std;
 
 int main() {
-	int X;
-	cin >> X;
+	int N;
+	cin >> N;
 
 	int i = 1;
-	while (X > i) {
-		X -= i;
+	while (N > i) {
+		N -= i;
 		i++;
 	}
 
-	if (i % 2 == 1) cout << i + 1 - X << "/" << X;
-	else cout << X << "/" << i+ 1 - X;
-
-	return 0;
+	if (i % 2 == 1)
+		cout << i + 1 - N << '/' << N << endl;
+	else
+		cout << N << '/' << i + 1 - N << endl;
 }
